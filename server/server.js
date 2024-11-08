@@ -11,7 +11,7 @@ import User from "./src/models/auth/UserModel.js";
 
 dotenv.config();
 
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 8081;
 
 const app = express();
 const httpServer = new createServer(app);

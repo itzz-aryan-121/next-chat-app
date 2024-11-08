@@ -10,7 +10,24 @@ function LoginForm() {
   const togglePassword = () => setShowPassword(!showPassword);
 
   return (
-    <form className="login-form relative m-[2rem] px-10 py-14 rounded-lg bg-white w-full max-w-[520px]">
+    <div className="relative w-full h-screen flex justify-center items-center overflow-hidden">
+      {/* Background Video */}
+      <video
+        autoPlay
+        loop
+        muted
+        className="absolute top-0 left-0 w-full h-full object-cover -z-10"
+      >
+        <source src="/mov2.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      {/* Overlay for readability */}
+      <div className="absolute top-0 left-0 w-full h-full bg-black opacity-50 -z-10"></div>
+        
+        {/* Login Form */}
+
+    <form className="login-form relative m-[2rem] px-10 py-14 rounded-lg backdrop-blur-lg text-white  w-full max-w-[520px]">
       <div className="relative z-10">
         <h1 className="mb-2 text-center text-[1.35rem] font-medium">
           Login to Your Account
@@ -27,7 +44,8 @@ function LoginForm() {
 
         <div className="mt-[1rem] flex flex-col">
           <label htmlFor="email" className="mb-1 text-[#999]">
-            Email
+            <span className="px-2 py-1 bg-black text-white font-semibold rounded">Email</span>
+            
           </label>
           <input
             type="text"
@@ -35,13 +53,14 @@ function LoginForm() {
             value={email}
             onChange={(e) => handlerUserInput("email")(e)}
             name="email"
-            className="px-4 py-3 border-[2px] rounded-md outline-[#2ECC71] text-gray-800"
-            placeholder="johndoe@gmail.com"
+            className="px-4 py-3 border-[1px] rounded-md outline-[#2ECC71] text-[#999] bg-black"
+            placeholder="Enter Your Email"
           />
         </div>
         <div className="relative mt-[1rem] flex flex-col">
           <label htmlFor="password" className="mb-1 text-[#999]">
-            Password
+            <span className="px-2 py-1 bg-black text-white font-semibold rounded">Password</span>
+            
           </label>
           <input
             type={showPassword ? "text" : "password"}
@@ -49,7 +68,7 @@ function LoginForm() {
             value={password}
             onChange={(e) => handlerUserInput("password")(e)}
             name="password"
-            className="px-4 py-3 border-[2px] rounded-md outline-[#2ECC71] text-gray-800"
+            className="px-4 py-3 border-[1px] rounded-md outline-[#2ECC71] text-[#999] bg-black"
             placeholder="***************"
           />
           <button
@@ -82,8 +101,9 @@ function LoginForm() {
           </button>
         </div>
       </div>
-      <img src="/flurry.png" alt="" />
+      
     </form>
+  </div>
   );
 }
 

@@ -9,18 +9,21 @@ function MainContent() {
       <div className="mt-auto flex flex-col gap-4">
         <div className="flex justify-center items-center">
           <Image
-            className="drop-shadow-lg"
-            src="/logo.png"
-            alt="Chat App"
+            className="drop-shadow-lg rounded-s-full"
+            src="/logo4.png"
+            alt=""
             width={120}
             height={120}
+            
+            
           />
         </div>
+
 
         <div className="flex flex-col gap-4">
           <h1 className="text-4xl text-center text-gray-800 dark:text-white">
             Welcome to{" "}
-            <span className={`font-bold ${gradientText}`}>ChatApp</span>
+            <span className={`font-bold ${gradientText}`}>Voxer</span>
           </h1>
           <p className="text-center text-gray-600 dark:text-gray-300">
             Start a conversation with your friends now!

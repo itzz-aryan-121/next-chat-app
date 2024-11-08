@@ -12,6 +12,7 @@
     "@edgestore/react": "^0.1.6",
     "@edgestore/server": "^0.1.6",
     "axios": "^1.6.8",
+    "dotenv": "^16.4.5",
     "emoji-picker-react": "^4.10.0",
     "lodash": "^4.17.21",
     "moment": "^2.30.1",

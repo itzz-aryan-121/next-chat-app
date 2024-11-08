@@ -56,6 +56,7 @@ function Sidebar() {
 
   // active nav button
   const [activeNav, setActiveNav] = useState(navButtons[0].id);
+  const {logoutUser}  = useUserContext();
 
   const lightTheme = () => {
     updateUser({ theme: "light" });
@@ -68,6 +69,8 @@ function Sidebar() {
   useEffect(() => {
     document.documentElement.className = user.theme;
   }, [user.theme]);
+
+
 
   return (
     <div className="w-[25rem] flex border-r-2 border-white dark:border-[#3C3C3C]/60">

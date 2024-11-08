@@ -66,6 +66,8 @@ function Profile() {
         My Profile
       </h3>
 
+    <div className="h-full overflow-y-auto p-4">
+
       <div className="flex flex-col">
         <div className="group relative self-center">
           <Image
@@ -75,7 +77,7 @@ function Profile() {
             height={300}
             className="aspect-square rounded-full object-cover border-2 border-[white] cursor-pointer hover:scale-105 transition-transform
             duration-300 ease-in-out shadow-sm select-text  dark:border-[#3C3C3C]/65"
-          />
+            />
 
           <input
             type="file"
@@ -86,7 +88,7 @@ function Profile() {
               setFile(e.target?.files[0]);
             }}
             className="absolute top-0 left-0 w-full h-full opacity-0 cursor-pointer"
-          />
+            />
 
           <span className="absolute top-0 w-full h-full rounded-full cursor-pointer flex items-center justify-center bg-black bg-opacity-50 text-white text-lg font-semibold opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out pointer-events-none">
             Change Image
@@ -98,12 +100,12 @@ function Profile() {
             e.preventDefault();
             updateUser({ name: localName, bio: localBio });
           }}
-        >
+          >
           <div className="mb-2">
             <label
               htmlFor="name"
               className={`text-lg font-semibold ${gradientText} dark:text-slate-200`}
-            >
+              >
               Full Name
             </label>
             <input
@@ -113,14 +115,14 @@ function Profile() {
               defaultValue={localName}
               onChange={handleInput("name")}
               className="w-full pl-4 p-2 rounded-md bg-transparent shadow-sm border-2 border-[white] focus:outline-none focus:ring-2 focus:ring-[#7263f3] focus:border-transparent
-             dark:bg-[#3C3C3C]/65 dark:border-[#3C3C3C]/65"
-            />
+              dark:bg-[#3C3C3C]/65 dark:border-[#3C3C3C]/65"
+              />
           </div>
           <div>
             <label
               htmlFor="bio"
               className={`text-lg font-semibold ${gradientText} dark:text-slate-200`}
-            >
+              >
               Bio
             </label>
             <textarea
@@ -131,14 +133,14 @@ function Profile() {
               onChange={handleInput("bio")}
               className="w-full pl-4 p-2 rounded-md bg-transparent dark:bg-[#3C3C3C]/65 resize-none
               dark:border-[#3C3C3C]/65 shadow-sm border-2 border-[white] focus:outline-none focus:ring-2 focus:ring-[#7263f3] focus:border-transparent"
-            ></textarea>
+              ></textarea>
           </div>
 
           <div className="py-4 flex justify-end">
             <button
               type="submit"
               className="bg-[#7263f3] text-white p-2 rounded-md hover:bg-[#f56693] transition-colors duration-300 ease-in-out"
-            >
+              >
               Update Profile
             </button>
           </div>
@@ -152,13 +154,13 @@ function Profile() {
             setLocalOldPassword("");
             setLocalNewPassword("");
           }}
-        >
+          >
           <div className="flex gap-2">
             <div>
               <label
                 htmlFor="oldPassword"
                 className={`text-lg font-semibold ${gradientText} dark:text-slate-200`}
-              >
+                >
                 Old Password
               </label>
               <input
@@ -168,14 +170,14 @@ function Profile() {
                 value={localOldPassword}
                 onChange={handleInput("oldPassword")}
                 className="w-full pl-4 p-2 rounded-md bg-transparent shadow-sm border-2 border-[white] focus:outline-none focus:ring-2 focus:ring-[#7263f3] focus:border-transparent
-              dark:bg-[#3C3C3C]/65 dark:border-[#3C3C3C]/65"
-              />
+                dark:bg-[#3C3C3C]/65 dark:border-[#3C3C3C]/65"
+                />
             </div>
             <div>
               <label
                 htmlFor="newPassword"
                 className={`text-lg font-semibold ${gradientText} dark:text-slate-200`}
-              >
+                >
                 New Password
               </label>
               <input
@@ -185,8 +187,8 @@ function Profile() {
                 value={localNewPassword}
                 onChange={handleInput("newPassword")}
                 className="w-full pl-4 p-2 rounded-md bg-transparent shadow-sm border-2 border-[white] focus:outline-none focus:ring-2 focus:ring-[#7263f3] focus:border-transparent
-              dark:bg-[#3C3C3C]/65 dark:border-[#3C3C3C]/65"
-              />
+                dark:bg-[#3C3C3C]/65 dark:border-[#3C3C3C]/65"
+                />
             </div>
           </div>
           <div className="py-4 flex justify-end">
@@ -200,10 +202,11 @@ function Profile() {
           <button
             onClick={() => logoutUser()}
             className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 transition-colors duration-300 ease-in-out"
-          >
+            >
             {logout} Logout
           </button>
         </div>
+            </div>
       </div>
     </div>
   );
